@@ -5,6 +5,7 @@ const root = process.cwd();
 const htmlPath = join(root, 'index.html');
 const html = readFileSync(htmlPath, 'utf8');
 const errors = [];
+let hasResumeLink = false;
 
 function report(message) {
   errors.push(message);
@@ -12,8 +13,11 @@ function report(message) {
 
 for (const match of html.matchAll(/\s(?:href|src)=["']([^"']+)["']/g)) {
   const target = match[1];
-  if (/^(mailto:|https?:|#)/.test(target)) continue;
   const cleanTarget = decodeURIComponent(target.split('#')[0]);
+  if (cleanTarget === 'assets/Artem Ervits - Resume - 060326.pdf') {
+    hasResumeLink = true;
+  }
+  if (/^(mailto:|https?:|#)/.test(target)) continue;
   if (!existsSync(join(dirname(htmlPath), cleanTarget))) {
     report(`Missing local asset: ${target}`);
   }
@@ -39,7 +43,7 @@ for (const [index, css] of cssBlocks.entries()) {
   }
 }
 
-if (!html.includes('Artem Ervits - Resume - 060326.pdf')) {
+if (!hasResumeLink) {
   report('Resume PDF link text/path does not reference the 060326 PDF.');
 }
 
