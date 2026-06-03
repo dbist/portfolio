@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artem Ervits | Portfolio Inspired by Resume 060326</title>
+  <meta name="description" content="Portfolio for Artem Ervits, inspired by the June 3, 2026 resume PDF and focused on AI-enabled products, data cloud strategy, and solution engineering leadership.">
+  <meta property="og:title" content="Artem Ervits | AI, Data Cloud, and Solution Engineering">
+  <meta property="og:description" content="A portfolio for technical leadership, AI-enabled products, data cloud strategy, and solution engineering impact.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/pdf-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    :root {
+      --ink: #15171a;
+      --muted: #5f6670;
+      --line: #d7dbe0;
+      --paper: #fbfbfa;
+      --panel: #ffffff;
+      --sage: #dfe8e2;
+      --forest: #24493d;
+      --copper: #b25631;
+      --gold: #d5a33a;
+      --steel: #36546f;
+      --shadow: 0 18px 48px rgba(21, 23, 26, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: rgba(178, 86, 49, 0.55);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+
+    a:hover {
+      color: var(--copper);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(21, 23, 26, 0.1);
+      background: rgba(251, 251, 250, 0.92);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      width: min(1120px, calc(100% - 32px));
+      min-height: 64px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--ink);
+      background: var(--sage);
+      font-size: 0.82rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .button {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: #fff;
+      padding: 0 16px;
+      font-weight: 750;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+
+    .button:hover {
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px rgba(21, 23, 26, 0.18);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .button.secondary:hover {
+      color: var(--ink);
+      background: #fff;
+    }
+
+    .hero {
+      min-height: calc(100svh - 64px);
+      display: grid;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(223, 232, 226, 0.82), rgba(251, 251, 250, 0.78)),
+        url("assets/pdf-preview.png") right 9% center / min(42vw, 520px) auto no-repeat;
+    }
+
+    .hero-inner {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 64px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: var(--forest);
+      font-size: 0.82rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 2px;
+      background: var(--copper);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin-bottom: 18px;
+      font-size: clamp(2.6rem, 7vw, 5.7rem);
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      margin-bottom: 28px;
+      color: #2f353b;
+      font-size: clamp(1.06rem, 2vw, 1.3rem);
+    }
+
+    .hero-actions,
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-proof {
+      width: min(840px, 100%);
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 42px;
+      border: 1px solid rgba(21, 23, 26, 0.12);
+      background: rgba(21, 23, 26, 0.12);
+      box-shadow: var(--shadow);
+    }
+
+    .proof-item {
+      min-height: 104px;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .proof-value {
+      display: block;
+      color: var(--forest);
+      font-size: 1.7rem;
+      font-weight: 850;
+      line-height: 1;
+    }
+
+    .proof-label {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .section {
+      padding: 78px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section.alt {
+      background: #eef3f0;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(260px, 1fr);
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .focus-card,
+    .project-card,
+    .timeline-item,
+    .note-card {
+      border: 1px solid rgba(21, 23, 26, 0.12);
+      background: var(--panel);
+      box-shadow: 0 12px 30px rgba(21, 23, 26, 0.06);
+    }
+
+    .focus-card {
+      padding: 24px;
+      min-height: 238px;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      color: #fff;
+      background: var(--steel);
+      font-weight: 900;
+    }
+
+    .focus-card:nth-child(2) .icon {
+      background: var(--forest);
+    }
+
+    .focus-card:nth-child(3) .icon {
+      background: var(--copper);
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 1.18rem;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .project-card {
+      padding: 28px;
+    }
+
+    .project-title {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 16px;
+    }
+
+    .role {
+      color: var(--copper);
+      font-weight: 850;
+    }
+
+    .tag-list,
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag-list li,
+    .skills-list li {
+      border: 1px solid rgba(36, 73, 61, 0.28);
+      background: rgba(223, 232, 226, 0.58);
+      padding: 6px 10px;
+      color: var(--forest);
+      font-size: 0.9rem;
+      font-weight: 720;
+    }
+
+    .plain-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .plain-list li {
+      margin-bottom: 10px;
+    }
+
+    .case-study-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .case-study-card {
+      border: 1px solid rgba(21, 23, 26, 0.12);
+      background: var(--panel);
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(21, 23, 26, 0.06);
+    }
+
+    .case-study-card .role {
+      margin-bottom: 14px;
+    }
+
+    .project-kicker {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--steel);
+      font-size: 0.78rem;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 20px;
+      padding: 24px;
+    }
+
+    .timeline-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .timeline-meta strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .impact-line {
+      display: block;
+      color: var(--forest);
+      font-weight: 820;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(280px, 1fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .skills-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .note-card {
+      padding: 22px;
+    }
+
+    .note-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .compact-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .compact-list li {
+      margin-bottom: 7px;
+    }
+
+    .resume-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .resume-card {
+      border: 1px solid rgba(21, 23, 26, 0.12);
+      background: var(--panel);
+      padding: 26px;
+      box-shadow: 0 12px 30px rgba(21, 23, 26, 0.06);
+    }
+
+    .resume-card .button {
+      margin-top: 16px;
+    }
+
+    .contact-band {
+      padding: 74px 0;
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .contact-band .wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .contact-band p {
+      max-width: 680px;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .contact-band .button {
+      border-color: #fff;
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .contact-band .button.secondary {
+      background: transparent;
+      color: #fff;
+    }
+
+    footer {
+      padding: 24px 0;
+      color: var(--muted);
+      background: #fff;
+      font-size: 0.92rem;
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        min-height: auto;
+        padding: 14px 0;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        background:
+          linear-gradient(180deg, rgba(223, 232, 226, 0.94), rgba(251, 251, 250, 0.86)),
+          url("assets/pdf-preview.png") center bottom 22px / min(80vw, 420px) auto no-repeat;
+      }
+
+      .hero-inner {
+        padding: 52px 0 360px;
+      }
+
+      .hero-proof,
+      .focus-grid,
+      .project-grid,
+      .case-study-grid,
+      .section-head,
+      .split,
+      .resume-grid,
+      .contact-band .wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-proof {
+        width: 100%;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-panel {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body {
+        font-size: 15px;
+      }
+
+      .hero-inner {
+        padding-bottom: 300px;
+      }
+
+      .hero-proof {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .proof-item,
+      .focus-card,
+      .project-card,
+      .case-study-card,
+      .timeline-item,
+      .resume-card,
+      .note-card {
+        padding: 18px;
+      }
+
+      .project-title,
+      footer .wrap {
+        display: block;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Artem Ervits home">
+        <span class="brand-mark">AE</span>
+        <span>Artem Ervits</span>
+      </a>
+      <div class="nav-links" aria-label="Page sections">
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <p class="eyebrow">AI-enabled products · Data cloud strategy · Field leadership</p>
+        <h1 id="hero-title">Technical leadership for teams building what comes next.</h1>
+        <p class="hero-copy">I help enterprises, founders, and product teams turn complex data platforms into durable customer outcomes. My work spans solution engineering leadership, distributed database architecture, generative AI governance, and hands-on consumer app development through MERA Consulting.</p>
+        <div class="hero-actions">
+          <a class="button" href="mailto:artemervits@gmail.com">Start a Conversation</a>
+          <a class="button secondary" href="assets/Artem%20Ervits%20-%20Resume%20-%20060326.pdf">View Resume</a>
+        </div>
+        <div class="hero-proof" aria-label="Career highlights">
+          <div class="proof-item">
+            <span class="proof-value">15+</span>
+            <span class="proof-label">years in data, cloud, and solution engineering</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-value">100+</span>
+            <span class="proof-label">countries supported for global technical sales</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-value">45%</span>
+            <span class="proof-label">sales target overachievement in global territory</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-value">80</span>
+            <span class="proof-label">technical posts authored for product education</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="work-title">Where I Focus</h2>
+          <p>The resume is compact by design. The portfolio opens up the work behind it: advisory, architecture, technical selling, and product development.</p>
+        </div>
+        <div class="focus-grid">
+          <article class="focus-card">
+            <div class="icon" aria-hidden="true">01</div>
+            <h3>AI Product Advisory</h3>
+            <p class="muted">Building and advising on AI-enabled consumer and productivity applications with a practical eye for workflow fit, data boundaries, and user trust.</p>
+          </article>
+          <article class="focus-card">
+            <div class="icon" aria-hidden="true">02</div>
+            <h3>Data Cloud Architecture</h3>
+            <p class="muted">Helping teams make durable platform choices across Snowflake, distributed databases, cloud-native delivery, governance, and automation.</p>
+          </article>
+          <article class="focus-card">
+            <div class="icon" aria-hidden="true">03</div>
+            <h3>Solution Engineering Leadership</h3>
+            <p class="muted">Leading pre-sales strategy, mentoring engineers, shaping technical narratives, and creating repeatable customer adoption paths.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="projects-title">Independent Projects</h2>
+          <p>MERA Consulting anchors the current independent work: a practical studio for advising, prototyping, and building AI-enabled products.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-title">
+              <div>
+                <h3>MERA Consulting, LLC</h3>
+                <p class="role">Founder / Principal Consultant · Mar 2026 - Present</p>
+              </div>
+              <span class="muted">Fort Lee, NJ</span>
+            </div>
+            <ul class="plain-list">
+              <li>Established MERA Consulting to build and advise on AI-enabled consumer and productivity applications.</li>
+              <li>Developed Zone 2 Trainer, a fitness coaching app focused on heart-rate-based endurance training and personalized workout guidance.</li>
+              <li>Built a personal assistant app for task management, contextual reminders, and productivity workflow support.</li>
+            </ul>
+            <ul class="tag-list" aria-label="MERA focus areas">
+              <li>AI workflows</li>
+              <li>Consumer apps</li>
+              <li>Product strategy</li>
+              <li>Fitness tech</li>
+            </ul>
+          </article>
+          <aside class="project-card">
+            <h3>Product Direction</h3>
+            <p class="muted">The current product work pairs personal data, contextual reminders, and coaching loops with measured automation. The goal is software that feels useful before it feels impressive.</p>
+            <ul class="tag-list" aria-label="Product themes">
+              <li>Personal assistants</li>
+              <li>Contextual reminders</li>
+              <li>Endurance training</li>
+              <li>Workflow support</li>
+            </ul>
+          </aside>
+        </div>
+        <div class="case-study-grid" aria-label="Project case studies">
+          <article class="case-study-card">
+            <span class="project-kicker">Case Study</span>
+            <h3>Zone 2 Trainer</h3>
+            <p class="role">Fitness coaching app</p>
+            <p class="muted">A heart-rate-based endurance training product focused on helping users understand zone efficiency, recovery signals, and personalized workout guidance.</p>
+            <ul class="plain-list">
+              <li><strong>Problem:</strong> endurance training data is often scattered across activity logs, heart-rate charts, and generic plans.</li>
+              <li><strong>Solution:</strong> consolidate activity context into a coaching workflow centered on zone 2 training and recovery-aware guidance.</li>
+              <li><strong>Execution:</strong> Android application with third-party fitness platform integration and Firebase-backed iteration.</li>
+            </ul>
+            <ul class="tag-list" aria-label="Zone 2 Trainer stack and themes">
+              <li>Android</li>
+              <li>Firebase</li>
+              <li>Strava API</li>
+              <li>Training metrics</li>
+            </ul>
+          </article>
+          <article class="case-study-card">
+            <span class="project-kicker">Case Study</span>
+            <h3>Personal Assistant App</h3>
+            <p class="role">Productivity workflow support</p>
+            <p class="muted">A personal assistant concept for task management, contextual reminders, and practical workflow automation.</p>
+            <ul class="plain-list">
+              <li><strong>Problem:</strong> productivity tools often capture tasks but lose the context needed to act at the right moment.</li>
+              <li><strong>Solution:</strong> pair task management with contextual reminders and assistant-style workflow support.</li>
+              <li><strong>Execution:</strong> early AI-enabled product work emphasizing useful automation, user control, and privacy-aware behavior.</li>
+            </ul>
+            <ul class="tag-list" aria-label="Personal assistant app themes">
+              <li>AI workflows</li>
+              <li>Task management</li>
+              <li>Contextual reminders</li>
+              <li>Automation</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="experience-title">Experience</h2>
+          <p>A long arc through healthcare IT, big data platforms, open-source ecosystems, distributed databases, and data cloud leadership.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <strong>Snowflake</strong>
+              New York, NY · 2023 - Present
+            </div>
+            <div>
+              <h3>Solution Engineering Manager / Principal Solution Engineer</h3>
+              <p><span class="impact-line">Team leadership, global financial services strategy, and data cloud adoption.</span> Managed and mentored solution engineers, drove customer growth for a global financial services organization, and shaped technical pre-sales engagements across complex enterprise deployments.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <strong>Cockroach Labs</strong>
+              New York, NY · 2019 - 2023
+            </div>
+            <div>
+              <h3>Solutions Engineer / Enterprise Architect</h3>
+              <p><span class="impact-line">Mission-critical distributed database work.</span> Led technical onboarding and migrations to CockroachDB, authored 80 technical posts, and helped establish customer success and technical advisory practices.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <strong>Cloudera / Hortonworks</strong>
+              New York, NY · 2015 - 2019
+            </div>
+            <div>
+              <h3>Principal Solutions Engineer - Northeast</h3>
+              <p><span class="impact-line">Regional revenue growth and open-source depth.</span> Served as SME for Ambari, HBase, Phoenix, Oozie, and SmartSense while advising financial services, healthcare, and media accounts.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <strong>Healthcare Technology</strong>
+              NYC · 2004 - 2015
+            </div>
+            <div>
+              <h3>Big Data Engineer / Database Administrator / System Administrator</h3>
+              <p><span class="impact-line">Operational foundations at scale.</span> Built Hadoop and Java MapReduce systems, managed SQL Server deployments, improved disaster recovery, and led infrastructure modernization work.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resume" aria-labelledby="resume-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="resume-title">Resume Snapshot</h2>
+          <p>A recruiter-friendly summary of the June 3, 2026 resume, with the full PDF available for download.</p>
+        </div>
+        <div class="resume-grid">
+          <article class="resume-card">
+            <h3>Current Positioning</h3>
+            <p class="muted">Founder and principal consultant at MERA Consulting, LLC, building and advising on AI-enabled consumer and productivity applications while continuing a senior solution engineering leadership arc.</p>
+            <a class="button secondary" href="assets/Artem%20Ervits%20-%20Resume%20-%20060326.pdf">Download Resume PDF</a>
+          </article>
+          <article class="resume-card">
+            <h3>Resume Highlights</h3>
+            <ul class="compact-list">
+              <li>15+ years across IT operations, data platforms, and solution engineering.</li>
+              <li>Leadership for global financial services accounts and distributed technical teams.</li>
+              <li>Hands-on credibility across Snowflake, CockroachDB, Hadoop ecosystem tools, Kubernetes, and automation.</li>
+              <li>Current independent product work through MERA Consulting, Zone 2 Trainer, and a personal assistant application.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" aria-labelledby="skills-title">
+      <div class="wrap split">
+        <div>
+          <h2 id="skills-title">Skills and Signals</h2>
+          <p class="muted">The PDF’s strongest signal is breadth with depth: hands-on systems engineering, field credibility, and product-minded AI exploration.</p>
+        </div>
+        <div class="skills-panel">
+          <article class="note-card">
+            <h3>Technical</h3>
+            <ul class="compact-list">
+              <li>Data Cloud Architecture &amp; Strategy</li>
+              <li>Distributed Database Systems</li>
+              <li>Generative AI Security &amp; Governance</li>
+              <li>Cloud Native Solutions</li>
+              <li>Agile Technical Delivery</li>
+            </ul>
+          </article>
+          <article class="note-card">
+            <h3>Tools</h3>
+            <ul class="compact-list">
+              <li>Snowflake, Hadoop, HBase, Phoenix</li>
+              <li>CockroachDB, PostgreSQL, SQL Server</li>
+              <li>Python, Java, Golang</li>
+              <li>Kubernetes, Docker, Ansible, Terraform</li>
+              <li>Linux, PowerShell</li>
+            </ul>
+          </article>
+          <article class="note-card">
+            <h3>Recognition</h3>
+            <ul class="compact-list">
+              <li>Top Revenue Producer - North America</li>
+              <li>Solutions Engineer MVP</li>
+              <li>DZone Database Expert</li>
+              <li>Apache HBase, Phoenix, Oozie contributor</li>
+            </ul>
+          </article>
+          <article class="note-card">
+            <h3>Education</h3>
+            <ul class="compact-list">
+              <li>SnowPro Core Certified</li>
+              <li>M.S. in Information Systems</li>
+              <li>B.S. in Computer Science</li>
+              <li>Brooklyn College</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div>
+          <h2 id="contact-title">Let’s build something useful.</h2>
+          <p>Available for AI product advisory, data cloud architecture conversations, and technical leadership collaborations.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button" href="mailto:artemervits@gmail.com">Email Artem</a>
+          <a class="button secondary" href="https://github.com/dbist">GitHub</a>
+          <a class="button secondary" href="https://dzone.com/users/4518601/dbist.html">DZone</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Fort Lee, NJ · (917) 514-1485</span>
+      <span>Inspired by Artem Ervits - Resume - 060326.pdf.</span>
+    </div>
+  </footer>
+</body>
+</html>
