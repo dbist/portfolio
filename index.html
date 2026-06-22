@@ -10,7 +10,45 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/pdf-preview.png">
   <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://dbist.github.io/portfolio/">
+  <link rel="canonical" href="https://dbist.github.io/portfolio/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23dfe8e2' rx='4'/><text x='16' y='22' font-family='system-ui,sans-serif' font-size='13' font-weight='800' text-anchor='middle' fill='%2315171a'>AE</text></svg>">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Artem Ervits",
+    "jobTitle": "Founder, Principal Consultant",
+    "worksFor": { "@type": "Organization", "name": "MERA Consulting, LLC" },
+    "url": "https://dbist.github.io/portfolio/",
+    "email": "mailto:artemervits@gmail.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/artemervits/",
+      "https://github.com/dbist",
+      "https://dzone.com/users/4518601/dbist.html"
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   <style>
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      z-index: 100;
+      padding: 12px 18px;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
     :root {
       --ink: #15171a;
       --muted: #5f6670;
@@ -98,6 +136,50 @@
       font-size: 0.94rem;
     }
 
+    .nav-drawer {
+      display: none;
+      position: relative;
+    }
+
+    .nav-drawer-toggle {
+      list-style: none;
+      cursor: pointer;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--ink);
+    }
+
+    .nav-drawer-toggle::-webkit-details-marker {
+      display: none;
+    }
+
+    .nav-drawer[open] .nav-drawer-links {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 8px);
+      z-index: 30;
+      min-width: 160px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      padding: 6px 0;
+    }
+
+    .nav-drawer-links a {
+      display: block;
+      padding: 10px 18px;
+      color: var(--ink);
+      font-size: 0.94rem;
+      text-decoration: none;
+    }
+
+    .nav-drawer-links a:hover {
+      background: var(--sage);
+    }
+
     .button {
       min-height: 42px;
       display: inline-flex;
@@ -131,19 +213,39 @@
     }
 
     .hero {
+      position: relative;
       min-height: calc(100svh - 64px);
       display: grid;
       align-items: center;
       border-bottom: 1px solid var(--line);
-      background:
-        linear-gradient(90deg, rgba(223, 232, 226, 0.82), rgba(251, 251, 250, 0.78)),
-        url("assets/pdf-preview.png") right 9% center / min(42vw, 520px) auto no-repeat;
+      overflow: hidden;
+      background: linear-gradient(to right, rgba(223, 232, 226, 1) 30%, rgba(223, 232, 226, 0.6) 55%, rgba(251, 251, 250, 0) 75%);
     }
 
     .hero-inner {
       width: min(1120px, calc(100% - 32px));
       margin: 0 auto;
       padding: 64px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-doc {
+      position: absolute;
+      right: 9%;
+      top: 50%;
+      transform: translateY(-50%) rotate(1.5deg);
+      width: min(38vw, 440px);
+      margin: 0;
+      border: 1px solid rgba(21, 23, 26, 0.14);
+      box-shadow: 0 8px 24px rgba(21, 23, 26, 0.1), 0 28px 72px rgba(21, 23, 26, 0.18);
+      background: #fff;
+    }
+
+    .hero-doc img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     .eyebrow {
@@ -522,21 +624,35 @@
       .nav {
         min-height: auto;
         padding: 14px 0;
-        align-items: flex-start;
+        align-items: center;
       }
 
       .nav-links {
         display: none;
       }
 
+      .nav-drawer {
+        display: block;
+      }
+
       .hero {
-        background:
-          linear-gradient(180deg, rgba(223, 232, 226, 0.94), rgba(251, 251, 250, 0.86)),
-          url("assets/pdf-preview.png") center bottom 22px / min(80vw, 420px) auto no-repeat;
+        background: linear-gradient(180deg, rgba(223, 232, 226, 0.7) 0%, rgba(251, 251, 250, 0.1) 100%);
+        align-items: start;
+        overflow: visible;
       }
 
       .hero-inner {
-        padding: 52px 0 360px;
+        padding: 52px 0 24px;
+      }
+
+      .hero-doc {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: min(72vw, 360px);
+        margin: 0 auto 48px;
+        box-shadow: 0 8px 24px rgba(21, 23, 26, 0.12);
       }
 
       .hero-proof,
@@ -568,8 +684,8 @@
         font-size: 15px;
       }
 
-      .hero-inner {
-        padding-bottom: 300px;
+      .hero-doc {
+        width: min(88vw, 300px);
       }
 
       .hero-proof {
@@ -598,9 +714,10 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Artem Ervits home">
+      <a class="brand" href="#main-content" aria-label="Artem Ervits home">
         <span class="brand-mark">AE</span>
         <span>Artem Ervits</span>
       </a>
@@ -611,10 +728,26 @@
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
       </div>
+      <details class="nav-drawer">
+        <summary class="nav-drawer-toggle" aria-label="Navigation menu">
+          <svg width="22" height="16" viewBox="0 0 22 16" aria-hidden="true">
+            <rect y="0" width="22" height="2" fill="currentColor"/>
+            <rect y="7" width="22" height="2" fill="currentColor"/>
+            <rect y="14" width="22" height="2" fill="currentColor"/>
+          </svg>
+        </summary>
+        <div class="nav-drawer-links">
+          <a href="#work">Work</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </details>
     </nav>
   </header>
 
-  <main id="top">
+  <main id="main-content">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-inner">
         <p class="eyebrow">AI-enabled products · GTM advisory · Field leadership</p>
@@ -622,7 +755,7 @@
         <p class="hero-copy">I help enterprises, founders, and product teams turn complex data platforms into durable customer outcomes. My work spans fractional advisory for sales, GTM, and solution engineering teams, distributed database architecture, generative AI governance, and hands-on consumer app development through MERA Consulting.</p>
         <div class="hero-actions">
           <a class="button" href="mailto:artemervits@gmail.com">Start a Conversation</a>
-          <a class="button secondary" href="assets/Artem%20Ervits%20-%20Resume%20-%20060326.pdf">View Resume</a>
+          <a class="button secondary" href="assets/Artem%20Ervits%20-%20Resume%20-%20060326.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
         </div>
         <div class="hero-proof" aria-label="Career highlights">
           <div class="proof-item">
@@ -638,11 +771,14 @@
             <span class="proof-label">sales target overachievement in global territory</span>
           </div>
           <div class="proof-item">
-            <span class="proof-value">80</span>
+            <span class="proof-value">80+</span>
             <span class="proof-label">technical posts authored for product education</span>
           </div>
         </div>
       </div>
+      <figure class="hero-doc" aria-hidden="true">
+        <img src="assets/pdf-preview.png" alt="" width="460" height="596">
+      </figure>
     </section>
 
     <section class="section" id="work" aria-labelledby="work-title">
@@ -811,7 +947,7 @@
           <article class="resume-card">
             <h3>Current Positioning</h3>
             <p class="muted">Founder and principal consultant at MERA Consulting, LLC, building and advising on AI-enabled consumer and productivity applications while continuing a senior solution engineering leadership arc.</p>
-            <a class="button secondary" href="assets/Artem%20Ervits%20-%20Resume%20-%20060326.pdf">Download Resume</a>
+            <a class="button secondary" href="assets/Artem%20Ervits%20-%20Resume%20-%20060326.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
           </article>
           <article class="resume-card">
             <h3>Resume Highlights</h3>
@@ -883,8 +1019,9 @@
         </div>
         <div class="contact-actions">
           <a class="button" href="mailto:artemervits@gmail.com">Email Artem</a>
-          <a class="button secondary" href="https://github.com/dbist">GitHub</a>
-          <a class="button secondary" href="https://dzone.com/users/4518601/dbist.html">DZone</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/artemervits/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="button secondary" href="https://github.com/dbist" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="button secondary" href="https://dzone.com/users/4518601/dbist.html" target="_blank" rel="noopener noreferrer">DZone</a>
         </div>
       </div>
     </section>
