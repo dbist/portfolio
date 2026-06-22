@@ -101,12 +101,12 @@ npm run prepare
 
 Use standard prefixes — never `codex/`:
 
-| Prefix | When to use |
-|--------|-------------|
-| `fix/` | Bug fixes and corrections |
-| `feature/` | New functionality |
+| Prefix     | When to use                         |
+| ---------- | ----------------------------------- |
+| `fix/`     | Bug fixes and corrections           |
+| `feature/` | New functionality                   |
 | `content/` | Copy, text, or content-only changes |
-| `chore/` | Tooling, config, or housekeeping |
+| `chore/`   | Tooling, config, or housekeeping    |
 
 ## Working Style
 
