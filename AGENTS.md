@@ -97,6 +97,17 @@ npm run prepare
 - Do not close issues until the corresponding work is implemented and verified.
 - Keep issues focused enough to be independently actionable.
 
+### Branch naming
+
+Use standard prefixes — never `codex/`:
+
+| Prefix | When to use |
+|--------|-------------|
+| `fix/` | Bug fixes and corrections |
+| `feature/` | New functionality |
+| `content/` | Copy, text, or content-only changes |
+| `chore/` | Tooling, config, or housekeeping |
+
 ## Working Style
 
 - Make small, traceable changes tied to GitHub issues.
