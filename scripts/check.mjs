@@ -17,7 +17,7 @@ for (const match of html.matchAll(/\s(?:href|src)=["']([^"']+)["']/g)) {
   if (cleanTarget === 'assets/Artem Ervits - Resume - 060326.pdf') {
     hasResumeLink = true;
   }
-  if (/^(mailto:|https?:|#)/.test(target)) continue;
+  if (/^(mailto:|https?:|#|data:)/.test(target)) continue;
   if (!existsSync(join(dirname(htmlPath), cleanTarget))) {
     report(`Missing local asset: ${target}`);
   }
