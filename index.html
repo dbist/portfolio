@@ -609,6 +609,48 @@
         margin-top: 16px;
       }
 
+      .writing-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1px;
+        border: 1px solid rgba(21, 23, 26, 0.12);
+        background: rgba(21, 23, 26, 0.12);
+        box-shadow: var(--shadow);
+      }
+
+      .writing-item {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        padding: 18px 22px;
+        background: var(--panel);
+        color: var(--ink);
+        text-decoration: none;
+        transition: background 120ms ease;
+      }
+
+      .writing-item:hover {
+        background: var(--sage);
+        color: var(--ink);
+      }
+
+      .writing-year {
+        color: var(--muted);
+        font-size: 0.85rem;
+        font-weight: 720;
+        white-space: nowrap;
+      }
+
+      .writing-title {
+        font-weight: 720;
+      }
+
+      @media (max-width: 560px) {
+        .writing-list {
+          grid-template-columns: 1fr;
+        }
+      }
+
       .contact-band {
         padding: 74px 0;
         background: var(--ink);
@@ -969,47 +1011,101 @@
           <div class="section-head">
             <h2 id="writing-title">Technical Writing</h2>
             <p>
-              80+ posts published on DZone as a recognized Database Expert,
-              covering distributed databases, data cloud platforms, and
-              open-source tooling.
+              Practitioner-level posts on distributed databases, data platforms,
+              and systems integration — published on
+              <a
+                href="https://blog.ervits.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >blog.ervits.com</a
+              >
+              and syndicated to DZone.
             </p>
           </div>
-          <div class="focus-grid">
-            <article class="focus-card">
-              <div class="icon" aria-hidden="true">DB</div>
-              <h3>Distributed SQL &amp; CockroachDB</h3>
-              <p class="muted">
-                Architecture patterns, migration strategies, and operational
-                insights from hands-on enterprise deployments — covering
-                consistency models, geo-partitioning, and production readiness.
-              </p>
-            </article>
-            <article class="focus-card">
-              <div class="icon" aria-hidden="true">HB</div>
-              <h3>Apache HBase &amp; Phoenix</h3>
-              <p class="muted">
-                Schema design, query optimization, and ecosystem tooling for
-                HBase and Phoenix — including Oozie workflows, Ambari
-                management, and wide-column data modeling at scale.
-              </p>
-            </article>
-            <article class="focus-card">
-              <div class="icon" aria-hidden="true">DC</div>
-              <h3>Data Cloud &amp; Platforms</h3>
-              <p class="muted">
-                Practical guidance on Snowflake, Hadoop ecosystem adoption, and
-                cloud-native data architecture for enterprise teams navigating
-                platform choices and migration paths.
-              </p>
-            </article>
+          <div class="writing-list" aria-label="Selected articles">
+            <a
+              class="writing-item"
+              href="https://blog.ervits.com/2024/03/integrating-trino-with-snowflake.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="writing-year">2024</span>
+              <span class="writing-title"
+                >Integrating Snowflake with Trino</span
+              >
+            </a>
+            <a
+              class="writing-item"
+              href="https://blog.ervits.com/2023/11/optimizing-pgbench-for-cockroachdb-part.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="writing-year">2023</span>
+              <span class="writing-title"
+                >Optimizing pgbench for CockroachDB</span
+              >
+            </a>
+            <a
+              class="writing-item"
+              href="https://blog.ervits.com/2022/04/using-cockroachdb-cdc-with-confluent.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="writing-year">2022</span>
+              <span class="writing-title"
+                >CockroachDB CDC with Confluent Cloud Kafka</span
+              >
+            </a>
+            <a
+              class="writing-item"
+              href="https://blog.ervits.com/2022/01/data-federation-with-cockroachdb-and.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="writing-year">2022</span>
+              <span class="writing-title"
+                >Data Federation with CockroachDB and Presto</span
+              >
+            </a>
+            <a
+              class="writing-item"
+              href="https://blog.ervits.com/2021/05/using-pgbouncer-with-cockroachdb.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="writing-year">2021</span>
+              <span class="writing-title"
+                >Using PGBouncer with CockroachDB</span
+              >
+            </a>
+            <a
+              class="writing-item"
+              href="https://blog.ervits.com/2020/02/exploring-cockroachdb-with-r-and.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="writing-year">2020</span>
+              <span class="writing-title"
+                >Exploring CockroachDB with Jupyter Notebook and R</span
+              >
+            </a>
           </div>
-          <div style="margin-top: 28px">
+          <div
+            style="margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap"
+          >
+            <a
+              class="button secondary"
+              href="https://blog.ervits.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >All posts on blog.ervits.com</a
+            >
             <a
               class="button secondary"
               href="https://dzone.com/users/4518601/dbist.html"
               target="_blank"
               rel="noopener noreferrer"
-              >View all posts on DZone</a
+              >DZone profile</a
             >
           </div>
         </div>
