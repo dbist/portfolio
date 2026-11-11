@@ -1,13 +1,13 @@
 # Artem Portfolio Agent Guide
 
-This repository is the static portfolio website for Artem Ervits. The current site is inspired by `assets/Artem Ervits - Resume - 060326.pdf` and should present Artem as a technical leader across AI-enabled products, data cloud strategy, distributed databases, and solution engineering.
+This repository is the static portfolio website for Artem Ervits. The current site is inspired by `assets/Artem Ervits - Resume - 111026.pdf` and should present Artem as a technical leader across AI-enabled products, data cloud strategy, distributed databases, and solution engineering.
 
 ## Project Shape
 
 - Static, dependency-light website:
   - `index.html`
   - `assets/pdf-preview.png`
-  - `assets/Artem Ervits - Resume - 060326.pdf`
+  - `assets/Artem Ervits - Resume - 111026.pdf`
 - Local preview:
 
 ```sh
@@ -38,7 +38,7 @@ Emphasize:
 - solution engineering leadership and measurable enterprise outcomes
 - open-source/community credibility
 
-Keep a direct download link to the `060326` resume PDF.
+Keep a direct download link to the `111026` resume PDF.
 
 ## Implementation Guidelines
 

@@ -1,6 +1,6 @@
 # Artem Ervits Portfolio
 
-Static portfolio and resume website for Artem Ervits, inspired by `assets/Artem Ervits - Resume - 060326.pdf`.
+Static portfolio and resume website for Artem Ervits, inspired by `assets/Artem Ervits - Resume - 111026.pdf`.
 
 ## What This Site Covers
 
@@ -24,7 +24,7 @@ Open `http://localhost:8080/`.
 npm run check
 ```
 
-The check script verifies local asset links, anchor targets, image alt text, the `060326` resume reference, and simple CSS brace balance.
+The check script verifies local asset links, anchor targets, image alt text, the `111026` resume reference, and simple CSS brace balance.
 
 ## Deployment
 
@@ -38,6 +38,6 @@ This repo is ready for GitHub Pages:
 ## Editing Notes
 
 - Keep the site static unless a GitHub issue explicitly changes the stack.
-- Preserve `assets/Artem Ervits - Resume - 060326.pdf` as the source resume reference.
+- Preserve `assets/Artem Ervits - Resume - 111026.pdf` as the source resume reference.
 - Keep copy concise and useful for recruiters, consulting clients, and collaborators.
 - Tie meaningful future work to GitHub issues.
