@@ -14,7 +14,7 @@ function report(message) {
 for (const match of html.matchAll(/\s(?:href|src)=["']([^"']+)["']/g)) {
   const target = match[1];
   const cleanTarget = decodeURIComponent(target.split('#')[0]);
-  if (cleanTarget === 'assets/Artem Ervits - Resume - 060326.pdf') {
+  if (cleanTarget === 'assets/Artem Ervits - Resume - 111026.pdf') {
     hasResumeLink = true;
   }
   if (/^(mailto:|https?:|#|data:)/.test(target)) continue;
@@ -44,7 +44,7 @@ for (const [index, css] of cssBlocks.entries()) {
 }
 
 if (!hasResumeLink) {
-  report('Resume PDF link text/path does not reference the 060326 PDF.');
+  report('Resume PDF link text/path does not reference the 111026 PDF.');
 }
 
 if (errors.length > 0) {
